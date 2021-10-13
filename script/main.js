@@ -1,6 +1,8 @@
 import People from './people.js';
 import Player from './player.js';
 import Target from './target.js';
+import * as Timer from './timer.js';
+import * as Result from './result.js';
 
 const people = new People(200);
 const player = new Player();

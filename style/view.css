@@ -32,3 +32,29 @@ body{
     background :no-repeat url('../img/dog.png');
     background-position:center bottom;
 }
+
+.play-control{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin : 30px 0;
+    transition: all 200ms ease-in-out;
+}
+.play-btn{
+    font-size: 1.5em;
+    text-align: center;
+    color:white;
+}
+
+.time-counter {
+    color: white;
+    display: inline-block;
+    margin : 0 20px;
+    font-size: 1.5em;
+}
+
+.target-counter{
+    display: inline-block;
+    font-size: 2em;
+    color: white;
+}
