@@ -32,6 +32,7 @@ body{
 .target{
     background :no-repeat url('../img/dog.png');
     background-position:center bottom;
+    cursor:pointer;
 }
 
 .play-control{
