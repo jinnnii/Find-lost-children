@@ -3,6 +3,8 @@ const playBtn = document.querySelector('.play-btn');
 const playView = document.querySelector('.play-view');
 const timeCounter = document.querySelector('.time-counter');
 
+const bgAudio = new Audio('./sound/bg.mp3');
+
 class Timer {
     constructor(time) {
         this.setTime = time;
@@ -29,6 +31,7 @@ class Timer {
         this.time = this.setTime;
         timeCounter.innerHTML = `00:00`;
         this.state = false;
+        bgAudio.pause();
     }
 
     forceStart() {
@@ -46,6 +49,7 @@ class Timer {
             this.state = true;
             playBtn.innerHTML = '<i class="fas fa-stop"></i>';
             playView.style.visibility = 'visible';
+            bgAudio.play();
         }
     }
 

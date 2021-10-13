@@ -5,12 +5,16 @@ const result = document.querySelector('.play-result')
 const text = document.querySelector('.play-result p');
 const btn = document.querySelector('.play-result button');
 
+const loseAudio = new Audio('./sound/alert.wav');
+const winAudio = new Audio('./sound/game_win.mp3');
+
 export function lose() {
     result.style.display = 'flex';
     text.innerHTML = `I lost my pet Forever`;
     timer.timerInit();
     document.querySelector('.play-btn').disabled = true;
     document.querySelector('.target').disabled = true;
+    loseAudio.play();
 }
 
 export function win() {
@@ -19,6 +23,7 @@ export function win() {
     timer.timerInit();
     document.querySelector('.play-btn').disabled = true;
     document.querySelector('.target').disabled = true;
+    winAudio.play();
 }
 
 function restart() {
