@@ -66,5 +66,11 @@ export default class People extends Pos {
             }
         }
     }
-}
 
+    remove() {
+        if (etc.childElementCount < 2) return;
+        etc.innerHTML = "";
+        this.people = new Array();
+        this.prePeople = new Array();
+    }
+}
