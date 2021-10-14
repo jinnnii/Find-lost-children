@@ -17,14 +17,14 @@ function setPersonPos(x, y) {
 }
 
 export default class People extends Pos {
-    constructor(count) {
+    constructor(count, range) {
         super();
         this.count = count;
         this.people = new Array();  //save current people's x,y coordinates
         this.prePeople = new Array(); //save init peaple's x,y coordinates
         this.posX = 0;
         this.posY = 0;
-        this.range = 100;
+        this.range = range;
         this.focusOutRange = this.range * 5;
     }
 

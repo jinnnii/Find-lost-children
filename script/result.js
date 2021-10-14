@@ -1,14 +1,35 @@
-import { init } from './init.js';
-import { timer } from './timer.js';
+'use strict';
 
-const result = document.querySelector('.play-result')
-const text = document.querySelector('.play-result p');
-const btn = document.querySelector('.play-result button');
+//import { init } from './init.js';
+//import { timer } from './timer.js';
 
-const loseAudio = new Audio('./sound/alert.wav');
-const winAudio = new Audio('./sound/game_win.mp3');
+export default class Result {
+    constructor() {
+        this.result = document.querySelector('.play-result')
+        this.text = document.querySelector('.play-result p');
+        this.btn = document.querySelector('.play-result button');
+        this.btn.addEventListener('click', () => {
+            this.hide();
+            this.onClick && this.onClick();
+        });
+    }
 
-export function lose() {
+    setClickListener(onClick) {
+        this.onClick = onClick;
+    }
+
+    showWithText(text) {
+        this.text.innerHTML = text;
+        this.result.style.display = 'flex';
+    }
+    hide() {
+        this.result.style.display = 'none';
+    }
+
+}
+
+
+/*export function lose() {
     result.style.display = 'flex';
     text.innerHTML = `I lost my pet Forever`;
     timer.timerInit();
@@ -35,4 +56,4 @@ function restart() {
 }
 btn.addEventListener('click', () => {
     restart();
-})
+})*/

@@ -2,7 +2,7 @@ const playView = document.querySelector('.play-view');
 const etcMan = document.querySelector('.etc img');
 
 const playViewRect = playView.getBoundingClientRect();
-const manRect = etcMan.getBoundingClientRect();
+const MAN_SIZE = 128;
 
 export default class Pos {
     constructor() {
@@ -12,8 +12,8 @@ export default class Pos {
         this.viewLeft = playViewRect.left;
         this.viewWidth = playViewRect.width;
         this.viewHeight = playViewRect.height;
-        this.manWidth = manRect.width / 2;
-        this.manHeight = manRect.height / 2;
+        this.manWidth = MAN_SIZE / 2;
+        this.manHeight = MAN_SIZE / 2;
     }
 
     RandomPos() {
